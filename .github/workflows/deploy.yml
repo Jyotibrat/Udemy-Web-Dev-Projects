@@ -28,3 +28,11 @@ jobs:
           publish_dir: ./Color Vocab Project
           publish_branch: gh-pages
           destination_dir: color-vocab
+
+      - name: Deploy Birthday Invite Project
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          publish_dir: ./Birthday Invite Project
+          publish_branch: gh-pages
+          destination_dir: birthday-invite
