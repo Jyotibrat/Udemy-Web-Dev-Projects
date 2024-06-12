@@ -1,0 +1,30 @@
+name: Deploy Udemy Web Dev Projects to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy Movie Ranking Project
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          publish_dir: ./Movie Ranking Project
+          publish_branch: gh-pages
+          destination_dir: movie-ranking
+
+      - name: Deploy Color Vocab Project
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          publish_dir: ./Color Vocab Project
+          publish_branch: gh-pages
+          destination_dir: color-vocab
